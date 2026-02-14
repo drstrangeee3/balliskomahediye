@@ -421,7 +421,7 @@
 
             this.physics.add.collider(this.player, this.cage); 
 
-            this.hitText = this.add.text(x, groundY - 80, "KURTAR BENİ!\n(YAKLAŞ VE VUR)", {
+            this.hitText = this.add.text(x, groundY - 80, "KURTAR BENİ BAL!\n(YAKLAŞ VE VUR)", {
                 fontSize: '16px', color: '#fff', align: 'center', stroke: '#000', strokeThickness: 3
             }).setOrigin(0.5);
         }
@@ -468,7 +468,7 @@
 
             this.tweens.add({ targets: this.cageGulmira, y: -50, duration: 300, yoyo: true, repeat: 2 });
 
-            const text = this.add.text(this.cage.x, this.cage.y - 100, "SENİ KURTARDIM AŞKIM!", { fontSize: '30px', color: '#00ff00', fontStyle: 'bold', stroke: '#000', strokeThickness: 4 }).setOrigin(0.5);
+            const text = this.add.text(this.cage.x, this.cage.y - 100, "SENİ KURTARDIM BAL!", { fontSize: '30px', color: '#00ff00', fontStyle: 'bold', stroke: '#000', strokeThickness: 4 }).setOrigin(0.5);
 
             this.time.delayedCall(3000, () => {
                 this.cameras.main.fadeOut(1000, 0, 0, 0);
@@ -775,4 +775,5 @@
     const game = new Phaser.Game(config);
 </script>
 </body>
+
 </html>
