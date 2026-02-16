@@ -608,7 +608,13 @@
 
         createTextures() {
             if(!this.textures.exists('gen_ground')) { const g = this.make.graphics().fillStyle(0x654321).fillRect(0,0,64,64).fillStyle(0x8B4513).fillRect(0,0,32,32).fillRect(32,32,32,32); g.generateTexture('gen_ground', 64, 64); }
-            if(!this.textures.exists('gen_spike')) { const s = this.make.graphics().fillStyle(0x888888).fillTriangle(0,30,15,0,30,30); s.generateTexture('gen_spike', 30, 30); }
+            if(!this.textures.exists('gen_spike')) {
+                const s = this.make.graphics().fillStyle(0x888888);
+                // Eskisi: fillTriangle(0,30,15,0,30,30) -> 30x30 idi
+                // Yenisi: fillTriangle(0,60,30,0,60,60) -> 60x60 oldu (Daha büyük ve sivri)
+                s.fillTriangle(0, 60, 30, 0, 60, 60);
+                s.generateTexture('gen_spike', 60, 60);
+            }
             if(!this.textures.exists('gen_sword')) { const sw = this.make.graphics().fillStyle(0xcccccc).fillRect(0,0,10,50).fillStyle(0x654321).fillRect(-5,40,20,5); sw.generateTexture('gen_sword', 20, 60); }
             if(!this.textures.exists('gen_enemy')) { const e = this.make.graphics().fillStyle(0xff0000).fillRect(0,0,40,60); e.generateTexture('gen_enemy', 40, 60); }
             if(!this.textures.exists('gen_icon')) {
@@ -787,5 +793,6 @@
 </body>
 
 </html>
+
 
 
