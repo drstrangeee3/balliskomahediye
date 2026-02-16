@@ -551,9 +551,19 @@
         }
 
         handleCombat(player, enemy) {
-            if(this.isAttacking) { enemy.destroy(); this.score += 100; this.scoreText.setText('PUAN: ' + this.score); } 
-            else { this.gameOver(); }
+        if(this.isAttacking) {
+            enemy.destroy();
+            this.score += 100;
+            this.scoreText.setText('PUAN: ' + this.score);
+        } else {
+            // ESKİ KOD: this.gameOver(); (Bunu sil veya önüne // koy)
+            
+            // YENİ KOD: Sadece geri fırlatır ve ekran sallanır, oyun bitmez.
+            this.cameras.main.shake(100, 0.01); 
+            player.setVelocityX(-400); 
+            player.setVelocityY(-400);
         }
+    }
 
         gameOver() {
             this.physics.pause();
@@ -777,4 +787,5 @@
 </body>
 
 </html>
+
 
